@@ -1,10 +1,10 @@
 {
-    "question":     "India lies in which hemisphere ?",
-    "optionOne":    "Southern and eastern",
-    "optionTwo":    "Northern and western",
-    "optionThree":  "Northern and eastern",
-    "optionFour":   "Southern and western",
-    "rightAnswer":  "optionThree",
-    "audiencePoll": "2, 5, 88, 5, 0",
-    "information": "India is located latitudinally in the Northern Hemisphere and longitudinally in the Eastern Hemisphere."
+    "question":     "Who is the current Prime Minister of Nepal",
+    "optionOne":    "Pushpa Kamal Dahal",
+    "optionTwo":    "KP Sharma Oli",
+    "optionThree":  "Sher Bahadur Deuba",
+    "optionFour":   "Rambaran Yadav",
+    "rightAnswer":  "optionOne",
+    "audiencePoll": "88, 5, 2, 5, 0",
+    "information": "It has been sometime since he was elected as the Prime Minister of the Nation"
 }
