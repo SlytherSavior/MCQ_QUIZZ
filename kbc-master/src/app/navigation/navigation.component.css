@@ -12,7 +12,7 @@
 	top: 0;
 	/* background-color: darkblue; */
 	/* Black fallback color */
-	background-color: rgba(42, 19, 80, 0.9);
+	background-color: rgba(19, 80, 23, 0.9);
 	/* Black w/opacity */
 	overflow-x: hidden;
 	/* Disable horizontal scroll */
