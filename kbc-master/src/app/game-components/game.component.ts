@@ -29,7 +29,7 @@ export class GameComponent implements OnInit {
   public currentWinnings: string;
   public guaranteedWinnings: string;
   public username: string = ConstantsService.emptyString;
-  public isNextQuestionAllowed = false;
+  public isNextQuestionAllowed = true;
   public hasOptionBeenLocked = false;
   public isGameReset = false;
   public isCollapsed = true;
@@ -122,14 +122,14 @@ export class GameComponent implements OnInit {
 
   lockOptionAndWait(optionNumber: number, isEnabled: boolean) {
     if (this.utilitiesService.hasGameStarted && isEnabled) {
-      this.isNextQuestionAllowed = false;
+      this.isNextQuestionAllowed = true;
       this.hasOptionBeenLocked = true;
       this.audioManagerService.playBackgroundSound(ConstantsService.finalAnswerAudioFilePath);
 
       let lockedAnswer: number;
       lockedAnswer = this.getsLockedOption(optionNumber);
       this.utilitiesService.setOptions(false);
-      this.isNextQuestionAllowed = false;
+      this.isNextQuestionAllowed = true;
       this.timerComponent.pauseTheClock();
       if (this.utilitiesService.lifelineDoubleChanceLocked) {
         this.optionLocked(lockedAnswer);
@@ -180,7 +180,7 @@ export class GameComponent implements OnInit {
       else {
         this.utilitiesService.isFlippedQuestionPresented = false;
       }
-      this.isNextQuestionAllowed = false;
+      this.isNextQuestionAllowed = true;
       this.getsWrongOption(lockedAnswer);
       this.audioManagerService.playBackgroundSound(ConstantsService.wrongAnswerAudioFilePath);
     }
