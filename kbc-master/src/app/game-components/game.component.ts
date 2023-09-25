@@ -160,7 +160,7 @@ export class GameComponent implements OnInit {
       }
       else {
         this.isNextQuestionAllowed = true;
-        this.utilitiesService.isFlippedQuestionPresented = true;
+        this.utilitiesService.isFlippedQuestionPresented = false;
       }
 
       this.utilitiesService.setOptions(false);
