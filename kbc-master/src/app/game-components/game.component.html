@@ -16,8 +16,7 @@
                     [class.is-invalid]='usernameText.invalid && usernameText.touched' placeholder="Enter your name"
                     autocomplete="off">
                 <small class="text-danger"
-                    [class.d-none]="usernameText.valid || usernameText.untouched || isGameReset">Name is required you
-                    moron!</small>
+                    [class.d-none]="usernameText.valid || usernameText.untouched || isGameReset">Team name is a necessity!</small>
             </div>
         </div>
         <div class="row form-group align-center">
@@ -50,7 +49,7 @@
         </div>
         <div class="row form-group wrap-word">
             <div class="col-sm-12 p-0">
-                <h4 style="margin-left: 5%;font-size: larger;">Current Points:  {{currentWinnings}}</h4>
+                <h4 style="margin-left: 5%;font-size: larger;">Time Remaining: </h4>
             </div>
         </div>
         <div class="row align-center">

@@ -28,7 +28,25 @@ export class ConstantsService {
   public static readonly mediumQuestionsAudioFilePath: string         = './assets/sounds/medium.mp3';
   public static readonly hardQuestionsAudioFilePath: string           = './assets/sounds/hard.mp3';
   public static readonly flipQuestionsSetJsonFilePath: string         = './assets/datasource/flip-questions-set-1.json';
-  public static readonly questionsSetJsonFilePath: string             = './assets/datasource/questions-set-1.json';
+  private static usedQuestionSetNumbers: Set<number> = new Set<number>();
+  public static get questionsSetJsonFilePath(): string {
+    let randomNumber: number;
+    let maxAttempts = 10; // Set a maximum number of attempts to prevent infinite loops
+  
+    do {
+      randomNumber = Math.floor(Math.random() * 6) + 1;
+      maxAttempts--;
+    } while (this.usedQuestionSetNumbers.has(randomNumber) && maxAttempts > 0);
+  
+    if (maxAttempts <= 0) {
+      // All sets have been used, so clear the used set
+      this.usedQuestionSetNumbers.clear();
+    }
+  
+    this.usedQuestionSetNumbers.add(randomNumber);
+  
+    return `./assets/datasource/questions-set-${randomNumber}.json`;
+  }
   public static readonly questionTextPlaceHolder: string              = 'Question';
   public static readonly optionOneTextPlaceHolder: string             = 'Option 1';
   public static readonly optionTwoTextPlaceHolder: string             = 'Option 2';
@@ -56,5 +74,5 @@ export class ConstantsService {
   public static readonly nextQuestionHeading: string                  = 'Next';
   public static readonly quiteGameHeading: string                     = 'Quit';
   public static readonly Questions                                    = 'Questions';
-  public static readonly informationAboutQuestion: string             = 'This is the place where knowledge with fun begins! Brace yourselves!';
+  public static readonly informationAboutQuestion: string             = 'Welcome to the MCQ round';
 }

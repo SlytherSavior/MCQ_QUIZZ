@@ -67,7 +67,7 @@ export class GameComponent implements OnInit {
     }
   }
 
-  getTheLifeline(lifeline: string) {
+  /*getTheLifeline(lifeline: string) {
     if (this.utilitiesService.hasGameStarted && !this.hasOptionBeenLocked) {
       switch (lifeline) {
         case ConstantsService.fiftyFifty:
@@ -90,7 +90,7 @@ export class GameComponent implements OnInit {
           break;
       }
     }
-  }
+  }*/
 
   startNewGame(username: string) {
     this.utilitiesService.hasGameStarted = true;
@@ -111,6 +111,7 @@ export class GameComponent implements OnInit {
     }
   }
 
+  
   quitTheGame() {
     if (this.utilitiesService.hasGameStarted) {
       this.audioManagerService.playBackgroundSound(ConstantsService.quitTheGameAudioFilePath);
@@ -119,6 +120,7 @@ export class GameComponent implements OnInit {
       this.utilitiesService.setLifeLines(false);
     }
   }
+  
 
   lockOptionAndWait(optionNumber: number, isEnabled: boolean) {
     if (this.utilitiesService.hasGameStarted && isEnabled) {
@@ -197,13 +199,14 @@ export class GameComponent implements OnInit {
   }
 
   public clockStatusFromTimerComponent(data: string) {
-    this.quitTheGame();
+    this.startTheTimer();
+    this.isNextQuestionAllowed = true;
     this.questionElement.nativeElement.innerHTML = ConstantsService.timeOver;
   }
 
   private startTheTimer() {
     const deadline = new Date(Date.parse(new Date().toString()) + 600 * 1000);
-    this.timerComponent.startTheClock(deadline);
+    this.timerComponent.startTheClock();
   }
 
   private stopTheTimer() {
@@ -295,107 +298,107 @@ export class GameComponent implements OnInit {
     }
   }
 
-  private lifeLineDoubleChance() {
-    if (!this.utilitiesService.lifelineDoubleChanceLocked) {
-      this.audioManagerService.playBackgroundSound(ConstantsService.lifeLineAudioFilePath);
-      this.utilitiesService.lifelineDoubleChanceLocked = true;
-      this.utilitiesService.imageSourceDoubleChance = ConstantsService.doubleChanceDoneImageSourcePath;
-    }
-  }
+  // private lifeLineDoubleChance() {
+  //   if (!this.utilitiesService.lifelineDoubleChanceLocked) {
+  //     this.audioManagerService.playBackgroundSound(ConstantsService.lifeLineAudioFilePath);
+  //     this.utilitiesService.lifelineDoubleChanceLocked = true;
+  //     this.utilitiesService.imageSourceDoubleChance = ConstantsService.doubleChanceDoneImageSourcePath;
+  //   }
+  // }
 
-  private lifeLineFiftyFifty() {
-    if (!this.utilitiesService.lifelineFiftyFiftyLocked) {
-      this.audioManagerService.playBackgroundSound(ConstantsService.lifeLineAudioFilePath);
-      this.utilitiesService.lifelineFiftyFiftyLocked = true;
-      this.utilitiesService.imageSourceFiftyFifty = ConstantsService.fiftyFiftyDoneImageSourcePath;
-      switch (this.questions[ConstantsService.Questions][this.arrayIndex - 1].rightAnswer) {
-        case ConstantsService.caseOptionOne:
-          this.optionFourElement.nativeElement.innerHTML = ConstantsService.exclamation;
-          this.optionThreeElement.nativeElement.innerHTML = ConstantsService.exclamation;
-          this.utilitiesService.isOptionFourEnabled = false;
-          this.utilitiesService.isOptionThreeEnabled = false;
-          break;
-        case ConstantsService.caseOptionTwo:
-          this.optionOneElement.nativeElement.innerHTML = ConstantsService.exclamation;
-          this.optionThreeElement.nativeElement.innerHTML = ConstantsService.exclamation;
-          this.utilitiesService.isOptionOneEnabled = false;
-          this.utilitiesService.isOptionThreeEnabled = false;
-          break;
-        case ConstantsService.caseOptionThree:
-          this.optionOneElement.nativeElement.innerHTML = ConstantsService.exclamation;
-          this.optionTwoElement.nativeElement.innerHTML = ConstantsService.exclamation;
-          this.utilitiesService.isOptionOneEnabled = false;
-          this.utilitiesService.isOptionTwoEnabled = false;
-          break;
-        case ConstantsService.caseOptionFour:
-          this.optionOneElement.nativeElement.innerHTML = ConstantsService.exclamation;
-          this.optionThreeElement.nativeElement.innerHTML = ConstantsService.exclamation;
-          this.utilitiesService.isOptionOneEnabled = false;
-          this.utilitiesService.isOptionThreeEnabled = false;
-          break;
-      }
-    }
-  }
+  // private lifeLineFiftyFifty() {
+  //   if (!this.utilitiesService.lifelineFiftyFiftyLocked) {
+  //     this.audioManagerService.playBackgroundSound(ConstantsService.lifeLineAudioFilePath);
+  //     this.utilitiesService.lifelineFiftyFiftyLocked = true;
+  //     this.utilitiesService.imageSourceFiftyFifty = ConstantsService.fiftyFiftyDoneImageSourcePath;
+  //     switch (this.questions[ConstantsService.Questions][this.arrayIndex - 1].rightAnswer) {
+  //       case ConstantsService.caseOptionOne:
+  //         this.optionFourElement.nativeElement.innerHTML = ConstantsService.exclamation;
+  //         this.optionThreeElement.nativeElement.innerHTML = ConstantsService.exclamation;
+  //         this.utilitiesService.isOptionFourEnabled = false;
+  //         this.utilitiesService.isOptionThreeEnabled = false;
+  //         break;
+  //       case ConstantsService.caseOptionTwo:
+  //         this.optionOneElement.nativeElement.innerHTML = ConstantsService.exclamation;
+  //         this.optionThreeElement.nativeElement.innerHTML = ConstantsService.exclamation;
+  //         this.utilitiesService.isOptionOneEnabled = false;
+  //         this.utilitiesService.isOptionThreeEnabled = false;
+  //         break;
+  //       case ConstantsService.caseOptionThree:
+  //         this.optionOneElement.nativeElement.innerHTML = ConstantsService.exclamation;
+  //         this.optionTwoElement.nativeElement.innerHTML = ConstantsService.exclamation;
+  //         this.utilitiesService.isOptionOneEnabled = false;
+  //         this.utilitiesService.isOptionTwoEnabled = false;
+  //         break;
+  //       case ConstantsService.caseOptionFour:
+  //         this.optionOneElement.nativeElement.innerHTML = ConstantsService.exclamation;
+  //         this.optionThreeElement.nativeElement.innerHTML = ConstantsService.exclamation;
+  //         this.utilitiesService.isOptionOneEnabled = false;
+  //         this.utilitiesService.isOptionThreeEnabled = false;
+  //         break;
+  //     }
+  //   }
+  // }
 
-  private lifeLineAskTheExpert() {
-    if (!this.utilitiesService.lifelineAskTheExpertLocked) {
-      this.audioManagerService.playBackgroundSound(ConstantsService.lifeLineAudioFilePath);
-      this.utilitiesService.lifelineAskTheExpertLocked = true;
-      this.utilitiesService.imageSourceAskTheExpert = ConstantsService.askTheExpertDoneImageSourcePath;
-      const query = this.questions[ConstantsService.Questions][this.arrayIndex - 1].question;
-      window.open(`http://google.com/search?q=${query}`);
-    }
-  }
+  // private lifeLineAskTheExpert() {
+  //   if (!this.utilitiesService.lifelineAskTheExpertLocked) {
+  //     this.audioManagerService.playBackgroundSound(ConstantsService.lifeLineAudioFilePath);
+  //     this.utilitiesService.lifelineAskTheExpertLocked = true;
+  //     this.utilitiesService.imageSourceAskTheExpert = ConstantsService.askTheExpertDoneImageSourcePath;
+  //     const query = this.questions[ConstantsService.Questions][this.arrayIndex - 1].question;
+  //     window.open(`http://google.com/search?q=${query}`);
+  //   }
+  // }
 
-  private lifeLineAskTheAudience() {
-    if (!this.utilitiesService.lifelineAskTheAudienceLocked) {
-      this.timerComponent.pauseTheClock();
-      this.audioManagerService.playBackgroundSound(ConstantsService.lifeLineAudioFilePath);
-      this.utilitiesService.lifelineAskTheAudienceLocked = true;
-      this.utilitiesService.imageSourceAskTheAudience = ConstantsService.askTheAudienceDoneImageSourcePath;
-      const modalRef = this.modalService.open(AudiencePollComponent,
-        {
-          size: 'lg',
-          centered: true,
-          keyboard: true
-        });
-      modalRef.componentInstance.name = ConstantsService.audiencePoll;
-      modalRef.result.then((data) => {
-        // Close Event
-        this.showAudiencePollPercentage();
-        this.timerComponent.resumeTheClock();
-      }, (reason) => {
-        // dismiss event
-        this.showAudiencePollPercentage();
-        this.timerComponent.resumeTheClock();
-      });
-    }
-  }
+  // private lifeLineAskTheAudience() {
+  //   if (!this.utilitiesService.lifelineAskTheAudienceLocked) {
+  //     this.timerComponent.pauseTheClock();
+  //     this.audioManagerService.playBackgroundSound(ConstantsService.lifeLineAudioFilePath);
+  //     this.utilitiesService.lifelineAskTheAudienceLocked = true;
+  //     this.utilitiesService.imageSourceAskTheAudience = ConstantsService.askTheAudienceDoneImageSourcePath;
+  //     const modalRef = this.modalService.open(AudiencePollComponent,
+  //       {
+  //         size: 'lg',
+  //         centered: true,
+  //         keyboard: true
+  //       });
+  //     modalRef.componentInstance.name = ConstantsService.audiencePoll;
+  //     modalRef.result.then((data) => {
+  //       // Close Event
+  //       this.showAudiencePollPercentage();
+  //       this.timerComponent.resumeTheClock();
+  //     }, (reason) => {
+  //       // dismiss event
+  //       this.showAudiencePollPercentage();
+  //       this.timerComponent.resumeTheClock();
+  //     });
+  //   }
+  // }
 
-  private lifeLineFlipTheQuestion() {
-    if (!this.utilitiesService.lifelineFlipTheQuestionLocked) {
-      this.audioManagerService.playBackgroundSound(ConstantsService.lifeLineAudioFilePath);
-      this.utilitiesService.imageSourceFlipTheQuestion = ConstantsService.switchTheQuestionDoneImageSourcePath;
-      this.utilitiesService.lifelineFlipTheQuestionLocked = true;
-      this.isCollapsed = false;
-      this.quizInformationDetailsService.getsFlipQuestionsList().subscribe(
-        (data) => {
-          this.flippedQuestionDetails = data;
-          this.timerComponent.pauseTheClock();
-        },
-        (error) => (console.log(error))
-      );
-    }
-  }
+  // private lifeLineFlipTheQuestion() {
+  //   if (!this.utilitiesService.lifelineFlipTheQuestionLocked) {
+  //     this.audioManagerService.playBackgroundSound(ConstantsService.lifeLineAudioFilePath);
+  //     this.utilitiesService.imageSourceFlipTheQuestion = ConstantsService.switchTheQuestionDoneImageSourcePath;
+  //     this.utilitiesService.lifelineFlipTheQuestionLocked = true;
+  //     this.isCollapsed = false;
+  //     this.quizInformationDetailsService.getsFlipQuestionsList().subscribe(
+  //       (data) => {
+  //         this.flippedQuestionDetails = data;
+  //         this.timerComponent.pauseTheClock();
+  //       },
+  //       (error) => (console.log(error))
+  //     );
+  //   }
+  // }
 
-  private lifeLineExtraTime() {
-    if (!this.utilitiesService.lifelineExtraTimeLocked) {
-      this.audioManagerService.playBackgroundSound(ConstantsService.lifeLineAudioFilePath);
-      this.utilitiesService.imageSourceExtraTime = ConstantsService.extraTimeDoneImageSourcePath;
-      this.utilitiesService.lifelineExtraTimeLocked = true;
-      this.timerComponent.incrementTheClockBy(60);
-    }
-  }
+  // private lifeLineExtraTime() {
+  //   if (!this.utilitiesService.lifelineExtraTimeLocked) {
+  //     this.audioManagerService.playBackgroundSound(ConstantsService.lifeLineAudioFilePath);
+  //     this.utilitiesService.imageSourceExtraTime = ConstantsService.extraTimeDoneImageSourcePath;
+  //     this.utilitiesService.lifelineExtraTimeLocked = true;
+  //     this.timerComponent.incrementTheClockBy(60);
+  //   }
+  // }
 
   private showAudiencePollPercentage() {
     const audiencePollDataArray = JSON.parse('[' + this.questions[ConstantsService.Questions][this.arrayIndex - 1].audiencePoll + ']');

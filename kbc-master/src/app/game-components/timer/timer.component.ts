@@ -16,7 +16,7 @@ export class TimerComponent implements OnInit {
   private isPaused = false;
   private pausedTime: any;
   private isResumed = false;
-  private startTime: any;
+  private startTime: 30;
   private numberOfSecondsIncremented: number;
   private isTimerTimeIncremented: boolean;
   private isTimedOut = true;
@@ -74,11 +74,12 @@ export class TimerComponent implements OnInit {
     }
   }
 
-  startTheClock(deadline: Date) {
+  startTheClock() {
+    const currentTime = new Date();
+    const deadline = new Date(currentTime.getTime() + 30 * 1000); // Add 30 seconds to the current time
     if (this.clockStatus.observers.length === 0 && TimerComponent.observer) {
       this.clockStatus.observers = TimerComponent.observer;
     }
-    this.startTime = deadline;
     this.isTimedOut = true;
     this.initializeClock('clockdiv', deadline);
   }

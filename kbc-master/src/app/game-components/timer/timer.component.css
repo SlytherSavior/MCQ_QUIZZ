@@ -1,28 +1,52 @@
-#clockdiv{
+#clockdiv {
 	font-family: sans-serif;
 	color: #fff;
 	display: inline-block;
 	text-align: center;
 	font-size: large;
-}
-
-#clockdiv > div{
-    display: inline-block;
+  }
+  
+  #clockdiv > div {
+	display: inline-block;
 	border-radius: 20px;
 	background: #2A133D;
-    /* background: darkblue; */
-}
-
-#clockdiv div > span{
+  }
+  
+  #clockdiv div > span {
 	padding: 15px;
 	border-radius: 3px;
-    display: inline-block;
-}
-
-.golden-border {
+	display: inline-block;
+  }
+  
+  .golden-border {
 	border: 2px solid goldenrod;
-}
-
-.red-border {
+  }
+  
+  .red-border {
 	border: 2px solid crimson;
-}
+  }
+  
+  /* Add new CSS class for time-up message */
+  .time-up {
+	background: crimson;
+	color: #fff;
+	font-weight: bold;
+	padding: 10px;
+	border-radius: 5px;
+	font-size: 20px;
+	margin-top: 10px;
+  }
+  
+  /* Add styles for the paused timer */
+  .paused {
+	background: gray; /* You can choose a suitable color for the paused state */
+	color: #fff;
+	font-weight: bold;
+	padding: 10px;
+	border-radius: 5px;
+	font-size: 20px;
+	margin-top: 10px;
+  }
+  
+  /* Add styles for the paused timer */
+  
