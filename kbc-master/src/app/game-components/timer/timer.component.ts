@@ -1,10 +1,13 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { audit } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-timer',
   templateUrl: './timer.component.html',
   styleUrls: ['./timer.component.css']
 })
+
 export class TimerComponent implements OnInit {
   constructor() {
     this.clockStatus = new EventEmitter<string>();
@@ -71,8 +74,7 @@ export class TimerComponent implements OnInit {
       this.isTimedOut = false;
       this.isPaused = false;
       this.isResumed = false;
-    }
-  }
+    }  }
 
   startTheClock() {
     const currentTime = new Date();

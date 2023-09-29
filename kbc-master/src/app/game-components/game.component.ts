@@ -199,6 +199,7 @@ export class GameComponent implements OnInit {
   }
 
   public clockStatusFromTimerComponent(data: string) {
+    
     this.startTheTimer();
     this.isNextQuestionAllowed = true;
     this.questionElement.nativeElement.innerHTML = ConstantsService.timeOver;
@@ -210,6 +211,7 @@ export class GameComponent implements OnInit {
   }
 
   private stopTheTimer() {
+    
     this.timerComponent.stopTheClock();
   }
 
