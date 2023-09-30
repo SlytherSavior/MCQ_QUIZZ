@@ -45,7 +45,7 @@ export class ConstantsService {
   
     this.usedQuestionSetNumbers.add(randomNumber);
   
-    return `./assets/datasource/questions-set-${randomNumber}.json`;
+    return `./assets/datasource/questions-set-1.json`;
   }
   public static readonly questionTextPlaceHolder: string              = 'Question';
   public static readonly optionOneTextPlaceHolder: string             = 'Option 1';

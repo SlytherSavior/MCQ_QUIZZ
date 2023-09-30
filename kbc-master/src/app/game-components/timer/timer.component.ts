@@ -78,7 +78,7 @@ export class TimerComponent implements OnInit {
 
   startTheClock() {
     const currentTime = new Date();
-    const deadline = new Date(currentTime.getTime() + 30 * 1000); // Add 30 seconds to the current time
+    const deadline = new Date(currentTime.getTime() + 45 * 1000); // Add 30 seconds to the current time
     if (this.clockStatus.observers.length === 0 && TimerComponent.observer) {
       this.clockStatus.observers = TimerComponent.observer;
     }

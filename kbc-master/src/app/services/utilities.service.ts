@@ -106,7 +106,7 @@ export class GameShowUtilitiesService {
 
   public prepareWinningDetails() {
     return ['5,000', '10,000', '20,000', '40,000', '80,000', '1,60,000', '3,20,000', '6,40,000', '12,50,000', '25 Lakh', '50 Lakh',
-      '1 Crore', '3 Crore', '5 Crore', '7 Crore'];
+      '1 Crore', '3 Crore', '5 Crore', '7 Crore','11 Crore','11 Crore','11 Crore','11 Crore','11 Crore','11 Crore','11 Crore','11 Crore','11 Crore',];
   }
 
   public isFirstGuessRight(): boolean {
