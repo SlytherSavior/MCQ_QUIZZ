@@ -8,7 +8,7 @@
           "optionFour":     "Kulbir Thapa",
           "rightAnswer":    "optionFour",
           "audiencePoll":   "5, 10, 5, 80, 0",
-          "amount":         "5,000",
+          "amount":         "2000",
           "information":    "Kulbir Thapa was the first nepali to win the Victoria Cross award!"
         },
         {
@@ -19,7 +19,7 @@
             "optionFour":  "Svante Pääbo",
             "rightAnswer": "optionFour",
             "audiencePoll":"15, 5, 15, 65, 0",
-            "amount":      "20,000",
+            "amount":      "2000",
             "information": ""
         },{
             "question":    "Who is known as the tiger of the house in Nepal?",
@@ -29,7 +29,7 @@
             "optionFour":  "Kalu Pandey",
             "rightAnswer": "optionTwo",
             "audiencePoll":"15, 5, 15, 65, 0",
-            "amount":      "20,000",
+            "amount":      "2000",
             "information": ""
         },{
             "question":    "When is world music day celebrated?",
@@ -39,7 +39,7 @@
             "optionFour":  "November 19",
             "rightAnswer": "optionOne",
             "audiencePoll":"15, 5, 15, 65, 0",
-            "amount":      "20,000",
+            "amount":      "2000",
             "information": ""
         },{
             "question":    "In which province of China is Wuhan located?",
@@ -49,7 +49,7 @@
             "optionFour":  "Hebai",
             "rightAnswer": "optionThree",
             "audiencePoll":"15, 5, 15, 65, 0",
-            "amount":      "20,000",
+            "amount":      "2000",
             "information": ""
         },{
             "question":    "Which is the deepest canyon in the world",
@@ -59,7 +59,7 @@
             "optionFour":  "Makhaleng River Canyon",
             "rightAnswer": "optionOne",
             "audiencePoll":"15, 5, 15, 65, 0",
-            "amount":      "20,000",
+            "amount":      "2000",
             "information": ""
         },{
             "question":    "After the Moon, what is the brightest object in the night sky?",
@@ -69,7 +69,7 @@
             "optionFour":  "International Space Station",
             "rightAnswer": "optionThree",
             "audiencePoll":"15, 5, 15, 65, 0",
-            "amount":      "20,000",
+            "amount":      "2000",
             "information": ""
         },{
             "question":    "In which year, did the trolly bus service commence in Nepal?",
@@ -79,7 +79,7 @@
             "optionFour":  "2022 B.S",
             "rightAnswer": "optionOne",
             "audiencePoll":"15, 5, 15, 65, 0",
-            "amount":      "20,000",
+            "amount":      "2000",
             "information": ""
         },{
             "question":    "Which country has won the most number of gold medals in the Olympics?",
@@ -89,7 +89,7 @@
             "optionFour":  "Japan",
             "rightAnswer": "optionTwo",
             "audiencePoll":"15, 5, 15, 65, 0",
-            "amount":      "20,000",
+            "amount":      "2000",
             "information": ""
         },{
             "question":    "Which is the fastest commerical aeroplane of the world?",
@@ -99,7 +99,7 @@
             "optionFour":  "Concorde",
             "rightAnswer": "optionOne",
             "audiencePoll":"15, 5, 15, 65, 0",
-            "amount":      "20,000",
+            "amount":      "2000",
             "information": ""
         },
          {
@@ -110,7 +110,7 @@
             "optionFour":  "Wii Sport",
             "rightAnswer": "optionTwo",
             "audiencePoll":"15, 5, 15, 65, 0",
-            "amount":      "20,000",
+            "amount":      "2000",
             "information": ""
         },{
             "question":    "Which is the largest car manufacturing company",
@@ -120,7 +120,7 @@
             "optionFour":  "Volkswagen",
             "rightAnswer": "optionFour",
             "audiencePoll":"15, 5, 15, 65, 0",
-            "amount":      "20,000",
+            "amount":      "2000",
             "information": ""
         },{
             "question":    "In which year did A Levels commence in Nepal?",
@@ -130,7 +130,7 @@
             "optionFour":  "2001 A.D",
             "rightAnswer": "optionOne",
             "audiencePoll":"15, 5, 15, 65, 0",
-            "amount":      "20,000",
+            "amount":      "2000",
             "information": ""
         },{
             "question":    "Which University offered the first-ever academic programme in Computer Science?",
@@ -140,7 +140,7 @@
             "optionFour":  "MIT",
             "rightAnswer": "optionThree",
             "audiencePoll":"15, 5, 15, 65, 0",
-            "amount":      "20,000",
+            "amount":      "2000",
             "information": ""
         },{
             "question":    "Who was the royal priest of Prithivi Narayan Shah?",
@@ -150,7 +150,18 @@
             "optionFour":  "Durga Prasad Sapkota",
             "rightAnswer": "optionTwo",
             "audiencePoll":"15, 5, 15, 65, 0",
-            "amount":      "20,000",
+            "amount":      "2000",
+            "information": ""
+        },
+        {
+            "question":    "Which of the following historical figures is often credited with the statement, 'I think, therefore I am'",
+            "optionOne":   "A) Albert Einstein    ",
+            "optionTwo":   "B) Rene Descartes",
+            "optionThree": "C) Isaac Newton",
+            "optionFour":  "D) Leonardo da Vinci",
+            "rightAnswer": "optionTwo",
+            "audiencePoll":"15, 5, 15, 65, 0",
+            "amount":      "2000",
             "information": ""
         }    
                    
