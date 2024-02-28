@@ -49,5 +49,5 @@ MIT
 
 
 
- Original repo :   [git-repo-url](git@github.com:shekhawatbhawani87/kbc-wwtbam.git)
+ Original repo :   [git-repo-url] (git@github.com:shekhawatbhawani87/kbc-wwtbam.git)
 
