@@ -17,7 +17,7 @@ This project is implemented using Angular Cli version [13.2.4] and [Node.js](htt
 Install the dependencies and devDependencies and start the server.
 
 ```sh
-$ cd game-show
+$ cd kbc-master
 $ npm install
 npm run start
 ```
